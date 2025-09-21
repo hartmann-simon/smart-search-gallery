@@ -1,0 +1,18 @@
+{
+    "active": {
+        "RETR_IMGS": 1,
+        "RETR_VIDS": 1,
+        "VERIFY": 1,
+        "VERIFIC_PROMPT": "Is <query> a fitting description of the image? Answer only with yes or no!",
+        "NUM_CLIPMATCHES": 30,
+        "CHUNK_SIZE": 3
+    },
+    "default": {
+        "RETR_IMGS": 1,
+        "RETR_VIDS": 1,
+        "VERIFY": 1,
+        "VERIFIC_PROMPT": "Is <query> a fitting description of the image? Answer only with yes or no!",
+        "NUM_CLIPMATCHES": 30,
+        "CHUNK_SIZE": 5
+    }
+}

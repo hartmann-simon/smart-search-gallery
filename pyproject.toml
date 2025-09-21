@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-search-gallery"
+version = "1.0.0"
+description = "An intelligent search engine for multimedia galleries using semantic retrieval and VLM validation. Powered by CLIP embeddings and PaliGemma verification for precise visual search."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Simon Hartmann" }]
+keywords = [
+    "computer-vision",
+    "search",
+    "clip",
+    "paligemma",
+    "ai",
+    "gallery",
+    "semantic-search",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "transformers>=4.30.0",
+    "gradio>=3.35.0,<4.0.0",
+    "Pillow>=9.3.0",
+    "numpy>=1.23.0",
+    "flask>=2.0.0",
+    "requests>=2.28.0",
+    "ffmpeg-python>=0.2.0",
+    "matplotlib>=3.6.0",
+    "huggingface-hub>=0.15.0",
+    "python-dotenv>=1.0.0",
+    "opencv-python>=4.8.0",
+    "clip @ git+https://github.com/openai/CLIP.git",
+    "eva-decord==0.6.1",
+]
+[tool.setuptools]
+packages = [
+    "ui",
+    "server",
+    "pipeline",
+    "matching",
+    "verification",
+    "video",
+    "config",
+]
+package-dir = { "" = "src" }
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.md", "*.txt"]
+
+[project.scripts]
+smart-gallery-server = "server.model_server:main"
+smart-gallery-search = "ui.gradio_app:main"
+
+[project.urls]
+Homepage = "https://github.com/hartmann-simon/smart-search-gallery"
+Repository = "https://github.com/hartmann-simon/smart-search-gallery.git"
+Issues = "https://github.com/hartmann-simon/smart-search-gallery/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.7.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.5.0",
+]
+gpu = ["torch[cuda]>=2.0.0"]
