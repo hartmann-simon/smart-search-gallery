@@ -6,6 +6,8 @@
 
 This project is a multimodal smart search engine for local media, enabling semantic search across both photos and videos. It uses a hybrid, two-stage search architecture to combine the speed of embedding-based retrieval with the contextual accuracy of a Vision Language Model (VLM). This brings powerful, content-aware search capabilities to your desktop computer.
 
+> **[Read the full University Research Report (PDF):](data/assets/uni_report.pdf)** detailing our VLM-based validation methodology, ablation studies, and pseudo-ground truth pipeline.
+
 ## How It Works
 
 The search process is designed for both speed and accuracy:
